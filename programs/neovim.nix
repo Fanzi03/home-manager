@@ -84,6 +84,10 @@
     				hi @string guifg=#a6e3a1
     				hi @comment guifg=#6c7086 gui=italic
   			]])
+
+			-- numbers
+			vim.opt.number = true
+  			vim.opt.relativenumber = true
   		'';
 	};	
 }

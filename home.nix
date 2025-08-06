@@ -1,7 +1,9 @@
 { config, pkgs, ...}: {
 
 	imports = [
-	 	./neovim.nix
+	 	./programs/neovim.nix
+		./programs/git.nix
+		./programs/bash.nix
 	];
 	home = {
 		username = "fanzi03";
@@ -13,11 +15,5 @@
 		];
 	};
 
-	programs.bash = {
-		enable = true;
-		shellAliases = {
-			rebuild = "sudo nixos-rebuild switch";
-		};
-	};
 
 }
