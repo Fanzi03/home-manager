@@ -53,7 +53,7 @@
       			}
     			})
 
-			vim.g.mapleader = " "  -- пробел как leader
+			vim.g.mapleader = " "  
   
 			--Telescope
  			require('telescope').setup()
