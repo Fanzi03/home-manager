@@ -37,7 +37,7 @@
 
 		extraLuaConfig = ''
 			local lspconfig = require('lspconfig')
-			lspconfig.jdtls.setup{}
+			--lspconfig.jdtls.setup{}
 
 			local cmp = require('cmp')
 			cmp.setup({
@@ -50,6 +50,35 @@
 				['<Tab>'] = cmp.mapping.select_next_item(),
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
 			}
+			})
+
+			-- setup jdtls
+			local jdtls = require('jdtls')
+			local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+			local workspace_dir = vim.fn.expand('~/.cache/jdtls/workspace/') .. project_name
+
+			local config = {
+				cmd = {
+					'jdtls',
+					'-data', workspace_dir,
+				},
+				root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'}),
+				on_attach = on_attach,
+				capabilities = require('cmp_nvim_lsp').default_capabilities(),
+				settings = {
+					java = {
+						signatureHelp = { enabled = true },
+						contentProvider = { preferred = 'fernflower' },
+					}
+				}
+			}
+	
+
+			vim.api.nvim_create_autocmd('FileType', {
+				pattern = 'java',
+				callback = function()
+					jdtls.start_or_attach(config)
+				end,
 			})
 
 			vim.g.mapleader = " "  
