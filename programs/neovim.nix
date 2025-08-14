@@ -5,7 +5,6 @@
 		enable = true;
 		defaultEditor = true;
 		plugins = with pkgs.vimPlugins;[
-			#nerdtree
 			telescope-nvim
 			(nvim-treesitter.withPlugins (p: [
 				p.java
@@ -60,11 +59,6 @@
 			require('telescope').setup()
 			vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 
-			--nerdtree
-			--vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>')
-			--vim.g.NERDTreeShowHidden = 1
-			--vim.keymap.set('n', '<Tab>', '<C-w>w')
-
 			--treesitter
 			require('nvim-treesitter.configs').setup {
 				highlight = {
@@ -78,6 +72,7 @@
 					enable = true,
 				},
 			}
+			--syntax
 			vim.cmd('syntax enable')
 			vim.cmd([[
 				hi @keyword gui=bold guifg=#f38ba8
