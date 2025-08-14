@@ -4,6 +4,8 @@
 	 	./programs/neovim.nix
 		./programs/git.nix
 		./programs/bash.nix
+		./programs/waybar.nix
+		#		./programs/hyprland.nix
 	];
 	home = {
 		username = "fanzi03";
@@ -12,6 +14,21 @@
 
 		packages = with pkgs; [
 			
+			#timer
+			timer
+			libnotify
+			mako
+			haskellPackages.pulseaudio
+
+			#Gui
+			jq
+			waybar
+     			xorg.libX11 
+     			xorg.libXrender
+     			xorg.libXtst 
+     			gtk3 
+     			glib
+     			openjfx21
 		];
 	};
 
