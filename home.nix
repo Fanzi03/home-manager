@@ -20,8 +20,8 @@
 			mako
 			haskellPackages.pulseaudio
 
-			#Gui
 			jq
+			python313Packages.xmljson
 			waybar
      			xorg.libX11 
      			xorg.libXrender
