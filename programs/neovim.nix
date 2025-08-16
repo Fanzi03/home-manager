@@ -3,8 +3,7 @@
 {
 	programs.neovim = {
 		enable = true;
-		defaultEditor = true;
-		plugins = with pkgs.vimPlugins;[
+		defaultEditor = true; plugins = with pkgs.vimPlugins;[
 			telescope-nvim
 			(nvim-treesitter.withPlugins (p: [
 				p.java
@@ -60,7 +59,8 @@
 			local config = {
 				cmd = {
 					'jdtls',
-					 '--jvm-arg=-javaagent:/nix/store/qa7mmvbawqga89nw0lws7pakhcl0mhww-lombok-1.18.38/share/java/lombok.jar',
+					'--jvm-arg=-javaagent:${pkgs.lombok}/share/java/lombok.jar',
+					 --'--jvm-arg=-javaagent:/nix/store/qa7mmvbawqga89nw0lws7pakhcl0mhww-lombok-1.18.38/share/java/lombok.jar', --work if parametrs not work
 					'-data', workspace_dir,
 				},
 				root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'}),
@@ -129,7 +129,7 @@
 			-- numbers
 			vim.opt.number = true
 			vim.opt.relativenumber = true
-		'' #+ import ./neovimUtil/createFile.nix
+		'' 
 		;
 	};	
 }
