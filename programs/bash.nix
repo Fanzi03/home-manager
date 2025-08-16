@@ -4,9 +4,9 @@
 		shellAliases = {
 			rebuild = "sudo nixos-rebuild switch";
 			configuration = "sudo -E nvim /etc/nixos/configuration.nix";
-			ehm = "nvim ~/.config/home-manager";
+			ehm = "cd ~/.config/home-manager && nvim .";
 			Envim = "nvim ~/.config/home-manager/programs/neovim.nix";
-			projects = "nvim ~/tool/MyProjects";
+			projects = "cd ~/tool/MyProjects/ && nvim .";
 			projectsD = "cd ~/tool/MyProjects";
 			zapretD = "(cd ~/tool/zapret/zapret-discord-youtube-linux && sudo ./main_script.sh)";
 
