@@ -26,6 +26,7 @@
 			extraPackages = with pkgs; [
 				jdt-language-server
 				ripgrep
+				lombok
 				fd
 				wl-clipboard
 
@@ -37,7 +38,6 @@
 
 		extraLuaConfig = ''
 			local lspconfig = require('lspconfig')
-			--lspconfig.jdtls.setup{}
 
 			local cmp = require('cmp')
 			cmp.setup({
@@ -60,6 +60,7 @@
 			local config = {
 				cmd = {
 					'jdtls',
+					 '--jvm-arg=-javaagent:/nix/store/qa7mmvbawqga89nw0lws7pakhcl0mhww-lombok-1.18.38/share/java/lombok.jar',
 					'-data', workspace_dir,
 				},
 				root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'}),
