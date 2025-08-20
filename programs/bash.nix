@@ -12,6 +12,7 @@
 
 			timers = "cd ~/.config/home-manager/scripts && ./timers.sh";
 			timersS = "cd ~/.config/home-manager/scripts";
+			minecraft = "cd ~/mine && steam-run java -jar TLauncher.jar";
 		};	
 		initExtra = ''
       			update_kitty_title() {

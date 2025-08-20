@@ -14,7 +14,7 @@
 
 		packages = with pkgs; [
 			
-			#timer
+			pavucontrol
 			timer
 			libnotify
 			mako
@@ -29,6 +29,7 @@
      			gtk3 
      			glib
      			openjfx21
+
 		];
 	};
 
