@@ -19,6 +19,10 @@
 			libnotify
 			mako
 			haskellPackages.pulseaudio
+			libreoffice-qt6-fresh
+			telegram-desktop
+
+			gitui
 
 			jq
 			python313Packages.xmljson
