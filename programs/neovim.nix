@@ -12,7 +12,11 @@
 				p.python
 				p.nix
 				p.kotlin
+				p.html
+				p.css
+				p.sql
 			]))
+			harpoon2
 			nvim-lspconfig
 			nvim-jdtls
 			nvim-cmp
@@ -28,6 +32,7 @@
 			lombok
 			fd
 			wl-clipboard
+			sqls
 
 			#compali
 			gcc          
@@ -57,6 +62,9 @@
 		    + import ./neovimUtil/map.nix
 		    + import ./neovimUtil/telescope.nix
 		    + import ./neovimUtil/jdtls.nix { inherit pkgs; } 
+		    + import ./neovimUtil/harpoon.nix
+		    + import ./neovimUtil/fronted.nix
+		    + import ./neovimUtil/sql.nix
 			;
 	};	
 }

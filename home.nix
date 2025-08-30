@@ -21,9 +21,11 @@
 			haskellPackages.pulseaudio
 			libreoffice-qt6-fresh
 			telegram-desktop
+			vscode-langservers-extracted
+			emmet-ls
+
 
 			gitui
-
 			jq
 			python313Packages.xmljson
 			waybar

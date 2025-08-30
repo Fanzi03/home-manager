@@ -14,7 +14,6 @@
 				'-data', workspace_dir,
 			},
 			root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'}),
-			on_attach = on_attach,
 			capabilities = require('cmp_nvim_lsp').default_capabilities(),
 			settings = {
 				java = {
@@ -27,6 +26,18 @@
 					},
 					configuration = {
 						updateBuildConfiguration = "interactive"
+					},
+					imports = {
+						gradle  = {
+							wrapper = {
+								checksums = {
+									--{
+                								--sha256 = "7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172",
+                								--allowed = true
+              								--}
+								}
+							}
+						}
 					}
 				}
 			},
